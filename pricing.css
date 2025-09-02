@@ -1,0 +1,209 @@
+/* Pricing Page Specific Styles */
+:root {
+  --background: #f0f8ff;
+  --foreground: #374151;
+  --card: #ffffff;
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  --chart-2: #10b981;
+  --radius: 0.5rem;
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card);
+  box-shadow: var(--shadow-md);
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.redesigned-pricing-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+.redesigned-pricing-hero {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+.redesigned-pricing-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.pricing-sub {
+  font-size: 1.2rem;
+  color: var(--foreground);
+  margin-top: 1rem;
+}
+.price-highlight {
+  color: var(--primary);
+  font-weight: bold;
+}
+.redesigned-pricing-details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.redesigned-pricing-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+}
+.price-circle {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+.price-circle span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-foreground);
+}
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  color: var(--foreground);
+  font-size: 1.1rem;
+}
+.pricing-features li {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cta-large {
+  font-size: 1.15rem;
+  padding: 1.2rem 2.5rem;
+  border-radius: 2em;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  color: #6b7280;
+  text-align: center;
+}
+
+.trial-badge-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.trial-badge {
+  background: linear-gradient(90deg, #22c55e 0%, #10b981 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.35rem;
+  padding: 1em 2.2em;
+  border-radius: 2.5em;
+  box-shadow: 0 6px 24px -4px #22c55e55;
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #22c55e, #10b981) 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  letter-spacing: 0.04em;
+  animation: trial-pulse 1.8s infinite cubic-bezier(.66,0,.34,1);
+}
+.trial-icon {
+  font-size: 1.5em;
+  margin-right: 0.2em;
+}
+.trial-highlight {
+  color: #fff700;
+  text-shadow: 0 2px 8px #0002;
+  font-size: 1.1em;
+  margin: 0 0.15em;
+}
+.trial-subtext {
+  margin-top: 0.5em;
+  font-size: 1.05rem;
+  color: #10b981;
+  font-weight: 600;
+  text-shadow: 0 2px 8px #0001;
+}
+.trial-urgent {
+  color: #ef4444;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+@keyframes trial-pulse {
+  0% { box-shadow: 0 0 0 0 #22c55e55; }
+  70% { box-shadow: 0 0 0 16px #22c55e00; }
+  100% { box-shadow: 0 0 0 0 #22c55e00; }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
+  }
+  .redesigned-pricing-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  .redesigned-pricing-card {
+    max-width: 95vw;
+    padding: 2rem 0.5rem;
+  }
+  .redesigned-pricing-hero h1 {
+    font-size: 1.5rem;
+  }
+}
