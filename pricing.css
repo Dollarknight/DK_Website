@@ -1,3 +1,44 @@
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
+  }
+  .redesigned-pricing-main {
+    padding: 0 0.2rem;
+  }
+  .redesigned-pricing-hero {
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .redesigned-pricing-hero h1 {
+    font-size: 1.3rem;
+  }
+  .pricing-sub {
+    font-size: 1rem;
+  }
+  .redesigned-pricing-details {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .redesigned-pricing-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.3rem;
+  }
+  .price-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+  .trial-badge {
+    font-size: 1rem;
+    padding: 0.7em 1em;
+  }
+  .trial-subtext {
+    font-size: 0.95rem;
+  }
+}
 /* Pricing Page Specific Styles */
 :root {
   --background: #f0f8ff;
@@ -20,28 +61,27 @@ body {
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: var(--card);
-  box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
 }
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .nav-links a {
-  color: var(--foreground);
-  font-weight: 500;
-  transition: color 0.2s;
-  text-decoration: none;
+    color: var(--foreground);
+    font-weight: 500;
+    transition: color 0.2s;
 }
 .nav-links a:hover {
-  color: var(--primary);
+    color: var(--primary);
 }
 
 .redesigned-pricing-main {
