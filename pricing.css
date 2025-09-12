@@ -5,10 +5,10 @@
   --card-foreground: #374151;
   --popover: #ffffff;
   --popover-foreground: #374151;
-  --primary: #22c55e;
+  --primary: #44b27b;
   --primary-foreground: #ffffff;
   --secondary: #e0f2fe;
-  --secondary-foreground: #4b5563;
+  --secondary-foreground: #224154;
   --muted: #f3f4f6;
   --muted-foreground: #6b7280;
   --accent: #d1fae5;
@@ -17,20 +17,20 @@
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #22c55e;
-  --chart-1: #22c55e;
+  --ring: #224154;
+  --chart-1: #44b27b;
   --chart-2: #10b981;
   --chart-3: #059669;
   --chart-4: #047857;
   --chart-5: #065f46;
   --sidebar: #e0f2fe;
   --sidebar-foreground: #374151;
-  --sidebar-primary: #22c55e;
+  --sidebar-primary: #44b27b;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #d1fae5;
   --sidebar-accent-foreground: #374151;
   --sidebar-border: #e5e7eb;
-  --sidebar-ring: #22c55e;
+  --sidebar-ring: #44b27b;
   --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Lora', serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -54,7 +54,7 @@
   --card-foreground: #d1d5db;
   --popover: #1e293b;
   --popover-foreground: #d1d5db;
-  --primary: #34d399;
+  --primary: #44b27b;
   --primary-foreground: #0f172a;
   --secondary: #2d3748;
   --secondary-foreground: #a1a1aa;
@@ -66,20 +66,20 @@
   --destructive-foreground: #0f172a;
   --border: #4b5563;
   --input: #4b5563;
-  --ring: #34d399;
-  --chart-1: #34d399;
+  --ring: #224154;
+  --chart-1: #44b27b;
   --chart-2: #2dd4bf;
   --chart-3: #22c55e;
   --chart-4: #10b981;
   --chart-5: #059669;
   --sidebar: #1e293b;
   --sidebar-foreground: #d1d5db;
-  --sidebar-primary: #34d399;
+  --sidebar-primary: #44b27b;
   --sidebar-primary-foreground: #0f172a;
   --sidebar-accent: #374151;
   --sidebar-accent-foreground: #a1a1aa;
   --sidebar-border: #4b5563;
-  --sidebar-ring: #34d399;
+  --sidebar-ring: #44b27b;
   --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Lora', serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -425,4 +425,114 @@ footer {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
+}
+
+/* Launch Banner Styles */
+.launch-banner {
+    background: linear-gradient(135deg, var(--primary), #224154);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.beta-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-right: 0.5rem;
+}
+
+.banner-content p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+}
+
+/* Launch Timeline Styles */
+.launch-info {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--accent);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary);
+}
+
+.launch-timeline {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* App Store Badges Styles */
+.app-stores {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.app-stores h3 {
+    color: var(--foreground);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.store-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.store-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.store-link:hover {
+    transform: scale(1.05);
+}
+
+.store-badge {
+    height: 50px;
+    width: auto;
+    transition: filter 0.2s ease;
+    filter: brightness(0.9);
+    display: block;
+}
+
+.store-link:hover .store-badge {
+    filter: brightness(1);
+}
+
+/* Additional responsive styles for pricing page */
+@media (max-width: 768px) {
+    .launch-banner {
+        padding: 0.75rem 1rem;
+    }
+    
+    .banner-content p {
+        font-size: 0.9rem;
+    }
+    
+    .launch-timeline {
+        font-size: 1rem;
+    }
+    
+    .store-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .store-badge {
+        height: 40px;
+    }
 }
