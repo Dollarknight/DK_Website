@@ -6,21 +6,12 @@
     <title>DollarKnight</title>
     <link rel="icon" type="image/png" href="icons/dollar_knight.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="icons/dollar_knight1.png" alt="DollarKnight Logo">
-                <span>Dollar<br>Knight</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="launch-banner">
@@ -51,10 +42,14 @@
             </div>
             <div class="screenshot-container">
                 <div class="mobile-frame">
-                    <img src="screenshots\SC1.jpg" alt="App Screenshot 1">
+                    <div class="screen-container">
+                        <img src="screenshots\SC1.jpg" alt="App Screenshot 1">
+                    </div>
                 </div>
                 <div class="mobile-frame">
-                    <img src="screenshots\SC2.jpg" alt="App Screenshot 2">
+                    <div class="screen-container">
+                        <img src="screenshots\SC2.jpg" alt="App Screenshot 2">
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,10 +78,9 @@
 
     </main>
 
-    <footer id="contact">
-        <p>&copy; 2025 DollarKnight. All rights reserved.</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
