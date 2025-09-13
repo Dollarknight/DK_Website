@@ -32,20 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             waitlistMessage.textContent = 'Submitting...';
             waitlistMessage.style.color = '';
+            
             try {
-                // Dynamically import Supabase client
-                const { SUPABASE_URL, SUPABASE_ANON_KEY } = await import('./supabaseConfig.js');
-                const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
-                const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                const { error } = await supabase.from('email_list').insert([{ name, email }]);
-                if (error) {
-                    throw error;
+                const response = await fetch('/api/add-to-waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email })
+                });
+                
+                const data = await response.json();
+                const messageDiv = waitlistMessage;
+                
+                if (response.ok) {
+                    messageDiv.textContent = "🎉 You're on the waitlist!";
+                    messageDiv.style.color = 'green';
+                    document.getElementById("waitlist-form").reset();
+                } else {
+                    messageDiv.textContent = "❌ " + (data.error || "Something went wrong");
+                    messageDiv.style.color = 'red';
                 }
-                waitlistMessage.textContent = 'Thank you! You have been added to the waitlist.';
-                waitlistMessage.style.color = 'green';
-                waitlistForm.reset();
             } catch (err) {
-                waitlistMessage.textContent = 'There was an error. Please try again later.';
+                console.error('Waitlist submission failed:', err);
+                waitlistMessage.textContent = "❌ Network error. Please try again later.";
                 waitlistMessage.style.color = 'red';
             }
         });
