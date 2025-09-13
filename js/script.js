@@ -34,18 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
             waitlistMessage.style.color = '';
             
             try {
-                // Replace with your actual Supabase project URL
+                // Replace with your actual Supabase project URL and anon key
                 const SUPABASE_URL = 'https://ihugoyrccdnrtpubanpm.supabase.co';
-                const response = await fetch(`${SUPABASE_URL}/functions/v1/save_waitlist`, {
+                const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlodWdveXJjY2RucnRwdWJhbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4MDI4MjcsImV4cCI6MjA3MTM3ODgyN30.eXVi_EOgr02dFJg8N9sHTkn9gQGKgNo9p4abczbZhLU'; // You need to add your anon key
+                const functionUrl = `${SUPABASE_URL}/functions/v1/save_waitlist`;
+                
+                console.log('Attempting to fetch:', functionUrl);
+                console.log('Payload:', { name, email });
+                
+                const response = await fetch(functionUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
                     },
                     body: JSON.stringify({ name, email })
                 });
                 
                 const data = await response.json();
                 const messageDiv = waitlistMessage;
+                
+                console.log('Response status:', response.status);
+                console.log('Response data:', data);
                 
                 if (response.ok) {
                     messageDiv.textContent = "🎉 You're on the waitlist!";
@@ -57,7 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (err) {
                 console.error('Waitlist submission failed:', err);
-                waitlistMessage.textContent = "❌ Network error. Please try again later.";
+                console.error('Error type:', err.name);
+                console.error('Error message:', err.message);
+                console.error('Full error:', err);
+                
+                // More specific error messages
+                if (err.name === 'TypeError' && (err.message.includes('fetch') || err.message.includes('NetworkError'))) {
+                    waitlistMessage.textContent = "❌ Could not connect to server. Check your internet connection.";
+                } else if (err.message.includes('CORS')) {
+                    waitlistMessage.textContent = "❌ Server configuration error (CORS). Please contact support.";
+                } else {
+                    waitlistMessage.textContent = "❌ Network error: " + err.message;
+                }
                 waitlistMessage.style.color = 'red';
             }
         });
