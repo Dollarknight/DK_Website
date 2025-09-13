@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
                 const messageDiv = waitlistMessage;
                 
+                console.log('Response status:', response.status);
+                console.log('Response data:', data);
+                
                 if (response.ok) {
                     messageDiv.textContent = "🎉 You're on the waitlist!";
                     messageDiv.style.color = 'green';
