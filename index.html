@@ -38,13 +38,15 @@
                         </a>
                     </div>
                 </div>
-                <p style="margin-top:1em; color:#333; font-size:1.05em;">Join the waitlist to get updates on our Beta and Full Launch. We'll email you when Beta access opens and again for the full release!</p>
-                <form id="waitlist-form" style="margin-top: 1em; display: flex; gap: 0.5em; flex-wrap: wrap; align-items: center;">
-                    <input type="text" id="waitlist-name" name="name" placeholder="Name" required style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc; min-width: 160px;">
-                    <input type="email" id="waitlist-email" name="email" placeholder="Email" required style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc; min-width: 220px;">
+                <p class="waitlist-description">Join the waitlist to get updates on our Beta and Full Launch. We'll email you when Beta access opens and again for the full release!</p>
+                <form id="waitlist-form" class="waitlist-form">
+                    <div class="form-inputs-row">
+                        <input type="text" id="waitlist-name" name="name" placeholder="Name" required class="form-input form-input-name">
+                        <input type="email" id="waitlist-email" name="email" placeholder="Email" required class="form-input form-input-email">
+                    </div>
                     <button type="submit" class="cta-button">Join Beta Waitlist</button>
                 </form>
-                <div id="waitlist-message" style="margin-top: 0.5em;"></div>
+                <div id="waitlist-message" class="waitlist-message"></div>
             </div>
             <div class="screenshot-container">
                 <div class="mobile-frame">
@@ -65,7 +67,7 @@
             <div class="feature-cards">
                 <div class="card">
                     <h3>Budgeting</h3>
-                    <p>Create and manage your budgets with ease.</p>
+                    <p>Create and manage budgets with ease.</p>
                 </div>
                 <div class="card">
                     <h3>Savings Goals</h3>
