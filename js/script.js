@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             waitlistMessage.style.color = '';
             
             try {
-                const response = await fetch('/api/add-to-waitlist', {
+                // Replace with your actual Supabase project URL
+                const SUPABASE_URL = 'https://ihugoyrccdnrtpubanpm.supabase.co';
+                const response = await fetch(`${SUPABASE_URL}/functions/v1/save_waitlist`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
