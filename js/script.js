@@ -33,8 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
             waitlistMessage.textContent = 'Submitting...';
             waitlistMessage.style.color = '';
             try {
-                // Dynamically import Supabase client
-                const { SUPABASE_URL, SUPABASE_ANON_KEY } = await import('./supabaseConfig.js');
+                // Vercel environment variables (injected at build time)
+                const SUPABASE_URL = '__SUPABASE_URL__';
+                const SUPABASE_ANON_KEY = '__SUPABASE_ANON_KEY__';
+                
+                if (SUPABASE_URL === '__SUPABASE_URL__' || SUPABASE_ANON_KEY === '__SUPABASE_ANON_KEY__') {
+                    throw new Error('Environment variables not configured. Please set SUPABASE_URL and SUPABASE_ANON_KEY in Vercel dashboard.');
+                }
+                
                 const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
                 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
                 const { error } = await supabase.from('email_list').insert([{ name, email }]);
