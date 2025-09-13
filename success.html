@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the DollarKnight Beta Waitlist!</title>
+    <link rel="icon" type="image/png" href="icons/dollar_knight.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+        .success-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 70vh;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #44b27b, #369968);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(68, 178, 123, 0.3);
+            animation: bounce 0.6s ease-out;
+        }
+
+        .success-icon::before {
+            content: "✓";
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0.3) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+            100% { transform: scale(1) rotate(360deg); opacity: 1; }
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            color: #44b27b;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .success-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .success-info-box {
+            background: #d1fae5;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid #44b27b;
+            margin: 2rem 0;
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .success-info-box h3 {
+            color: #44b27b;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .success-info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .success-info-box li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .success-info-box li::before {
+            content: "📧";
+            position: absolute;
+            left: 0;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: #44b27b;
+            padding: 1rem 2rem;
+            border: 2px solid #44b27b;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .secondary-button:hover {
+            background: #44b27b;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(68, 178, 123, 0.25);
+        }
+
+        .share-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+            max-width: 600px;
+        }
+
+        .share-section h3 {
+            color: #374151;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .twitter-share { background: #1da1f2; }
+        .twitter-share:hover { background: #1a91da; }
+
+        .linkedin-share { background: #0077b5; }
+        .linkedin-share:hover { background: #005885; }
+
+        .email-share { background: #6b7280; }
+        .email-share:hover { background: #4b5563; }
+
+        @media (max-width: 768px) {
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-share {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="success-hero">
+            <div class="success-icon"></div>
+            
+            <h1 class="success-title">You're In! 🎉</h1>
+            
+            <p class="success-subtitle">
+                Welcome to the DollarKnight Beta waitlist! We're thrilled to have you on board for this exciting journey.
+            </p>
+
+            <div class="success-info-box">
+                <h3>What happens next?</h3>
+                <ul>
+                    <li><strong>Beta Launch (October 2025):</strong> You'll receive early access to test DollarKnight before anyone else</li>
+                    <li><strong>Full Launch (January 2026):</strong> Get notified when the complete app is available on app stores</li>
+                    <li><strong>Exclusive Updates:</strong> Receive behind-the-scenes content and feature previews</li>
+                    <li><strong>Beta Feedback:</strong> Help shape the final product with your valuable input</li>
+                </ul>
+            </div>
+
+            <div class="success-actions">
+                <a href="index.html" class="cta-button">Back to Home</a>
+                <a href="blog.html" class="secondary-button">Read Our Story</a>
+                <a href="pricing.html" class="secondary-button">View Pricing</a>
+            </div>
+
+            <div class="share-section">
+                <h3>Share the excitement with friends!</h3>
+                <div class="social-share">
+                    <a href="https://twitter.com/intent/tweet?text=I%20just%20joined%20the%20DollarKnight%20Beta%20waitlist!%20This%20budgeting%20app%20looks%20amazing%20%F0%9F%92%B0%F0%9F%8F%B0&url=https://dollarknight.com" 
+                       target="_blank" rel="noopener noreferrer" class="social-button twitter-share">Share on Twitter</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dollarknight.com" 
+                       target="_blank" rel="noopener noreferrer" class="social-button linkedin-share">Share on LinkedIn</a>
+                    <a href="mailto:?subject=Check out DollarKnight!&body=I just joined the Beta waitlist for DollarKnight, an amazing new budgeting app launching soon! You should check it out: https://dollarknight.com" 
+                       class="social-button email-share">Share via Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script>
+        // Add some confetti effect on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple celebration animation
+            setTimeout(() => {
+                const successIcon = document.querySelector('.success-icon');
+                if (successIcon) {
+                    successIcon.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        successIcon.style.transform = 'scale(1)';
+                    }, 200);
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

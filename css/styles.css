@@ -48,6 +48,7 @@ body {
   border-radius: 0.5rem;
   border-left: 4px solid #44b27b;
   margin: 1.5rem 0;
+  display: none;
 }
 
 .launch-timeline {
@@ -354,6 +355,16 @@ body {
     flex-direction: column; 
     text-align: center; 
     padding: 2rem 1rem;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-stores {
+    order: 10;
+    margin-top: 2rem;
   }
   
   .hero h1 { 

@@ -58,9 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Response data:', data);
                 
                 if (response.ok) {
-                    messageDiv.textContent = "🎉 You're on the waitlist!";
+                    messageDiv.textContent = "🎉 Redirecting...";
                     messageDiv.style.color = 'green';
                     document.getElementById("waitlist-form").reset();
+                    
+                    // Redirect to success page after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'success.html';
+                    }, 1000);
                 } else {
                     messageDiv.textContent = "❌ " + (data.error || "Something went wrong");
                     messageDiv.style.color = 'red';
