@@ -435,3 +435,48 @@ body {
     gap: 1rem;
   }
 }
+
+/* Blog Promo Section */
+.blog-promo {
+  background: linear-gradient(135deg, #f0f8ff, #e0f2fe);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.blog-promo-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-promo h2 {
+  font-size: 2.2rem;
+  color: #224154;
+  margin-bottom: 1rem;
+  font-family: 'Lora', serif;
+}
+
+.blog-promo p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.blog-cta-button {
+  display: inline-block;
+  background: #44b27b;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.blog-cta-button:hover {
+  background: #224154;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(68, 178, 123, 0.3);
+}
