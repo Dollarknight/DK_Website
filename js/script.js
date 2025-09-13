@@ -32,37 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             waitlistMessage.textContent = 'Submitting...';
             waitlistMessage.style.color = '';
+            
             try {
-                // Vercel environment variables (injected at build time)
-                const SUPABASE_URL = '__SUPABASE_URL__';
-                const SUPABASE_ANON_KEY = '__SUPABASE_ANON_KEY__';
+                const response = await fetch('/api/add-to-waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email })
+                });
                 
-                if (SUPABASE_URL === '__SUPABASE_URL__' || SUPABASE_ANON_KEY === '__SUPABASE_ANON_KEY__') {
-                    throw new Error('Environment variables not configured. Please set SUPABASE_URL and SUPABASE_ANON_KEY in Vercel dashboard.');
-                }
+                const data = await response.json();
+                const messageDiv = waitlistMessage;
                 
-                const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
-                const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                const { error } = await supabase.from('email_list').insert([{ name, email }]);
-                if (error) {
-                    throw error;
-                }
-                waitlistMessage.textContent = 'Thank you! You have been added to the waitlist.';
-                waitlistMessage.style.color = 'green';
-                waitlistForm.reset();
-            } catch (err) {
-                // Log for debugging/monitoring
-                console.error('Waitlist submission failed:', err);
-                // Provide specific feedback when possible
-                if (err && typeof err.message === 'string') {
-                    if (err.message.includes('Environment variables not configured')) {
-                        waitlistMessage.textContent = 'Setup error: environment variables are missing. Please try again later.';
-                    } else {
-                        waitlistMessage.textContent = `Error: ${err.message}`;
-                    }
+                if (response.ok) {
+                    messageDiv.textContent = "🎉 You're on the waitlist!";
+                    messageDiv.style.color = 'green';
+                    document.getElementById("waitlist-form").reset();
                 } else {
-                    waitlistMessage.textContent = 'There was an unexpected error. Please try again later.';
+                    messageDiv.textContent = "❌ " + (data.error || "Something went wrong");
+                    messageDiv.style.color = 'red';
                 }
+            } catch (err) {
+                console.error('Waitlist submission failed:', err);
+                waitlistMessage.textContent = "❌ Network error. Please try again later.";
                 waitlistMessage.style.color = 'red';
             }
         });
