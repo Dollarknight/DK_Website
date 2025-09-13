@@ -51,7 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 waitlistMessage.style.color = 'green';
                 waitlistForm.reset();
             } catch (err) {
-                waitlistMessage.textContent = 'There was an error. Please try again later.';
+                // Log for debugging/monitoring
+                console.error('Waitlist submission failed:', err);
+                // Provide specific feedback when possible
+                if (err && typeof err.message === 'string') {
+                    if (err.message.includes('Environment variables not configured')) {
+                        waitlistMessage.textContent = 'Setup error: environment variables are missing. Please try again later.';
+                    } else {
+                        waitlistMessage.textContent = `Error: ${err.message}`;
+                    }
+                } else {
+                    waitlistMessage.textContent = 'There was an unexpected error. Please try again later.';
+                }
                 waitlistMessage.style.color = 'red';
             }
         });
