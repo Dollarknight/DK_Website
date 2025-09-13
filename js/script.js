@@ -69,12 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Waitlist submission failed:', err);
                 console.error('Error type:', err.name);
                 console.error('Error message:', err.message);
+                console.error('Full error:', err);
                 
                 // More specific error messages
-                if (err.name === 'TypeError' && err.message.includes('fetch')) {
+                if (err.name === 'TypeError' && (err.message.includes('fetch') || err.message.includes('NetworkError'))) {
                     waitlistMessage.textContent = "❌ Could not connect to server. Check your internet connection.";
                 } else if (err.message.includes('CORS')) {
-                    waitlistMessage.textContent = "❌ Server configuration error. Please contact support.";
+                    waitlistMessage.textContent = "❌ Server configuration error (CORS). Please contact support.";
                 } else {
                     waitlistMessage.textContent = "❌ Network error: " + err.message;
                 }
