@@ -17,6 +17,6 @@ async function loadComponent(elementId, filePath) {
 
 // Load header and footer when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    loadComponent('header-placeholder', 'header.html');
-    loadComponent('footer-placeholder', 'footer.html');
+    loadComponent('header-placeholder', 'html/header.html');
+    loadComponent('footer-placeholder', 'html/footer.html');
 });
