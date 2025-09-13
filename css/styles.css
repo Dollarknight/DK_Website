@@ -1,6 +1,16 @@
 /* DollarKnight Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Honeypot field - hidden from users */
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   background: #f0f8ff;
