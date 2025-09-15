@@ -101,6 +101,7 @@ body {
   color: var(--foreground);
   margin: 0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Navbar Styles */
@@ -393,8 +394,8 @@ footer {
 }
 
 @media (max-width: 576px) {
-  body {
-    padding: 0.5rem;
+  .pricing-main {
+    padding: 1rem 0.5rem;
   }
 
   .pricing-hero h1 {
@@ -477,6 +478,9 @@ footer {
 .app-stores {
     margin: 2rem 0;
     text-align: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 1rem;
 }
 
 .app-stores h3 {
@@ -486,14 +490,16 @@ footer {
 }
 
 .store-badges {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    margin: 1rem 0;
+    padding: 0.5rem;
 }
 
 .store-link {
-    display: inline-block;
+    display: inline-block !important;
     text-decoration: none;
     transition: transform 0.2s ease;
 }
@@ -507,7 +513,8 @@ footer {
     width: auto;
     transition: filter 0.2s ease;
     filter: brightness(0.9);
-    display: block;
+    display: block !important;
+    max-width: 150px;
 }
 
 .store-link:hover .store-badge {
@@ -529,9 +536,11 @@ footer {
     }
     
     .store-badges {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
         gap: 0.75rem;
+        flex-wrap: wrap;
     }
     
     .store-badge {
