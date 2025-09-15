@@ -16,6 +16,7 @@ body {
   background: #f0f8ff;
   color: #374151;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .launch-banner {
@@ -73,15 +74,23 @@ body {
 }
 
 .store-badges {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+.store-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
 .store-badge {
   height: 50px;
+  width: auto;
   transition: transform 0.2s;
+  display: block;
 }
 
 .store-link:hover { transform: scale(1.05); }
