@@ -399,7 +399,7 @@ body {
   }
   
   .screenshot-container {
-    gap: 0.25rem;
+    gap: 0rem;
     flex-direction: row;
   }
 }
