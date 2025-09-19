@@ -395,7 +395,7 @@ body {
 
 @media (max-width: 480px) {
   .screenshot-image {
-    width: 220px;
+    width: 200px;
   }
   
   .screenshot-container {
