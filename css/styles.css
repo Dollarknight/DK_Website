@@ -395,11 +395,11 @@ body {
 
 @media (max-width: 480px) {
   .screenshot-image {
-    width: 200px;
+    width: 220px;
   }
   
   .screenshot-container {
-    gap: 1rem;
+    gap: 0.25rem;
     flex-direction: row;
   }
 }
