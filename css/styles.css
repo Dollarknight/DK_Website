@@ -1,6 +1,12 @@
 /* DollarKnight Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Global Focus Styles for Accessibility */
+*:focus {
+  outline: 2px dashed #44b27b !important;
+  outline-offset: 5px !important;
+}
+
 /* Honeypot field - hidden from users */
 .honeypot {
   position: absolute !important;
@@ -72,6 +78,13 @@ body {
 .app-stores {
   text-align: center;
   margin: 2rem 0;
+}
+
+.app-stores-title {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .store-badges {
@@ -295,6 +308,7 @@ body {
 }
 
 .form-input:focus {
+  outline: none;
   border-color: #44b27b;
   background: linear-gradient(145deg, #ffffff, #ecfdf5);
   box-shadow: 
