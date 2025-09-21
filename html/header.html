@@ -1,14 +1,21 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="icons/dollar_knight1.png" alt="DollarKnight Logo">
-            <span>Dollar<br>Knight</span>
+            <img class="logo-img" src="icons/dollar_knight1.png" alt="DollarKnight Logo">
+            <span class="logo-text">Dollar<br>Knight</span>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
             <li><a href="index.html#features">Features</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <span class="menu-icon">&#9776;</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>

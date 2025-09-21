@@ -1,3 +1,69 @@
+.logo-text {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #22223b;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  margin-left: 0.3em;
+}
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  padding: 0 0.5em;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  min-width: 120px;
+  z-index: 200;
+  border-radius: 6px;
+  padding: 0.5em 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5em 1.2em;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background: #f3f4f6;
+  color: #44b27b;
+}
+
+/* Remove inline style from icon */
+.dropdown-toggle .menu-icon {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
 /* Header Styles */
 header {
   background: white;
@@ -26,15 +92,20 @@ nav {
   font-weight: bold;
 }
 
-.logo img { 
-  width: 32px; 
-  height: 32px; 
+.logo-img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .nav-links {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .nav-links a {

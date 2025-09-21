@@ -72,6 +72,9 @@ body {
 .app-stores {
   text-align: center;
   margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .store-badges {
