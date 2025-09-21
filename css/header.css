@@ -1,3 +1,19 @@
+/* Launch Banner Styles */
+.launch-banner {
+  background: linear-gradient(135deg, #44b27b, #224154);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.beta-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
 .logo-text {
   font-family: 'Lora', serif;
   font-size: 1.3rem;
