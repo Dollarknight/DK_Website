@@ -1,6 +1,12 @@
 /* Dollar Knight Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Accessible dashed focus outline for interactive and fillable elements */
+:is(a, button, input, textarea, select, summary, [role="button"], [tabindex]):not([tabindex="-1"]):focus-visible {
+  outline: 2px dashed #44b27b;
+  outline-offset: 5px;
+}
+
 /* Honeypot field - hidden from users */
 .honeypot {
   position: absolute !important;
