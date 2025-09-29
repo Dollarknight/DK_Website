@@ -101,7 +101,6 @@ body {
   color: var(--foreground);
   margin: 0;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 /* Navbar Styles */

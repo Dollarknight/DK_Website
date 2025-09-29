@@ -44,14 +44,25 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  /* anchor the menu to the right of the toggle so it doesn't overflow on small screens */
+  left: auto;
+  right: 0;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   min-width: 120px;
   z-index: 200;
   border-radius: 6px;
   padding: 0.5em 0;
+  /* make sure the menu can't exceed the viewport on narrow screens */
+  max-width: calc(100vw - 2rem);
+  /* small offset from the edge */
+  margin: 0.25rem;
+  box-sizing: border-box;
 }
+  /* Show menu when toggled via JS (for touch devices) */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
 
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {

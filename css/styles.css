@@ -1,6 +1,12 @@
 /* Dollar Knight Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Accessible dashed focus outline for interactive and fillable elements */
 :is(a, button, input, textarea, select, summary, [role="button"], [tabindex]):not([tabindex="-1"]):focus-visible {
   outline: 2px dashed #44b27b;
@@ -22,7 +28,6 @@ body {
   background: #f0f8ff;
   color: #374151;
   line-height: 1.6;
-  overflow-x: hidden;
   padding-top: 80px; /* Add space for fixed header */
 }
 
@@ -58,6 +63,98 @@ body {
   font-size: 3rem;
   color: #44b27b;
   margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+}
+
+/* Add a span around "Autopilot" in the HTML */
+.hero-title .autopilot {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .autopilot::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  width: 90%;
+  height: 12px;
+  background: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(68, 178, 123, 0.2) 10%,
+      rgba(68, 178, 123, 0.2) 90%, 
+      transparent 100%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.hero-title .autopilot::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-image: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      #44b27b 15%, 
+      #44b27b 35%, 
+      rgba(68, 178, 123, 0.7) 50%, 
+      #44b27b 65%, 
+      #44b27b 85%, 
+      transparent 100%),
+    linear-gradient(to bottom, 
+      transparent 0%,
+      transparent 45%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 55%,
+      transparent 100%);
+  background-size: 200% 100%, 100% 100%;
+  border-radius: 6px;
+  transform-origin: center;
+  transform: scaleX(0.92) translateX(4%) translateY(0);
+  animation: shimmer 4s infinite linear;
+  clip-path: polygon(
+    0% 0%, 3% 35%, 5% 65%, 8% 25%, 
+    13% 75%, 16% 35%, 20% 70%, 23% 30%, 
+    28% 65%, 32% 20%, 36% 60%, 39% 40%, 
+    43% 80%, 45% 10%, 48% 50%, 50% 30%, 
+    53% 75%, 57% 25%, 60% 50%, 63% 15%, 
+    68% 45%, 72% 5%, 76% 55%, 80% 25%, 
+    84% 75%, 87% 45%, 92% 70%, 95% 35%, 
+    98% 65%, 100% 0%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (hover: hover) {
+  .hero-title .autopilot:hover {
+    transform: translateY(-5px) scale(1.02);
+    display: inline-block;
+  }
 }
 
 .launch-info {
@@ -354,6 +451,21 @@ body {
   
   .hero h1 { 
     font-size: 2rem; 
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title .autopilot::before {
+    bottom: -10px;
+    height: 10px;
+  }
+  
+  .hero-title .autopilot::after {
+    bottom: -6px;
+    height: 5px;
   }
   
   .waitlist-form {
