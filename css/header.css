@@ -115,7 +115,6 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   font-weight: bold;
   text-decoration: none;
 }
