@@ -318,6 +318,37 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Coming Soon Cards */
+.card.coming-soon {
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(156, 163, 175, 0.75); /* Greyish overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.coming-soon-text {
+  background: rgba(68, 178, 123, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* (removed) Waitlist form styles */
 
 @media (max-width: 768px) {
