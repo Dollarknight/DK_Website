@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Dollar Knight - Budgeting App</title>
+    <meta name="description" content="Explore Dollar Knight's blog for insights on budgeting, personal finance, and money management tips.">
+    <link rel="icon" type="image/svg+xml" href="icons/Logo%20Assets/symbol.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/blogs.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div id="header-include"></div>
+    <script src="js/include-header.js"></script>
+
+    <main>
+        <div class="blogs-container">
+            <div class="blogs-header">
+                <h1>Blog</h1>
+                <p>Insights on budgeting, personal finance, and money management</p>
+            </div>
+
+            <div class="blogs-controls">
+                <div class="items-per-page">
+                    <label for="items-select">Show per page:</label>
+                    <select id="items-select">
+                        <option value="5" selected>5 per page</option>
+                        <option value="10">10 per page</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="blogs-list" class="blogs-list">
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-btn" class="pagination-btn" disabled>Previous</button>
+                <div class="pagination-info">
+                    <span id="page-info">Page 1</span>
+                </div>
+                <button id="next-btn" class="pagination-btn">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/blogs-list.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
