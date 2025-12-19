@@ -1,7 +1,7 @@
 const blogsData = [
     {
         title: "What is Dollar Knight? Meet the Budgeting App That's Changing How You Save",
-        description: "Learn what Dollar Knight is and how this budgeting app simplifies budgeting, savings goals, and subscription management. Experience now with 14 day free trial.",
+        description: "Learn what Dollar Knight is and how this budgeting app simplifies budgeting, savings goals, and subscription management. Experience now with 7 day free trial.",
         category: "App Introduction",
         date: "2025-09-13",
         dateDisplay: "September 13, 2025",
