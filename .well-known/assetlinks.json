@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dollarknight.dollar_knight",
+      "sha256_cert_fingerprints": [
+        "43:1A:08:89:11:9A:74:25:B2:03:0A:91:E9:C7:2B:61:D8:FD:99:03:7E:99:ED:70:87:3D:F5:9B:3D:55:38:14"
+      ]
+    }
+  }
+]
