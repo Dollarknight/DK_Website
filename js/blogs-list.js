@@ -8,14 +8,6 @@ const blogsData = [
         url: "blog.html"
     },
     {
-        title: "Goon Marketing: A Tinder-inspired Marketing Approach",
-        description: "Goon Marketing: concept credited to James Omotoyinbo (Dec 13, 2025). A high-level look at a Tinder-inspired marketing idea and ethical considerations.",
-        category: "Marketing",
-        date: "2025-12-13",
-        dateDisplay: "December 13, 2025",
-        url: "blog-goon-marketing.html"
-    },
-    {
         title: "Creating a Personal Budget: Your Guide to Financial Control",
         description: "Learn how to create a personal budget that works for you. Discover practical steps to track income, categorize expenses, and build a sustainable financial plan.",
         category: "Personal Finance",
